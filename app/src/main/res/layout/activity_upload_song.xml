@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black"
+    tools:context=".activities.UploadSongActivity">
+
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/backIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tint="@color/white"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="14dp"
+            android:src="@drawable/ic_arrow_back_normal"/>
+
+        <TextView
+            android:id="@+id/profileTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/lato_bold"
+            android:letterSpacing="0.06"
+            android:paddingVertical="18dp"
+            android:text="Upload Song"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/profileTv"
+            android:background="@color/md_grey_700" />
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="12dp">
+
+            <EditText
+                android:id="@+id/songTitleEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/lato"
+                android:hint="Song title..."
+                android:textColor="@color/md_green_400"
+                android:textColorHint="@color/md_grey_600"
+                android:background="@drawable/bg_button_borders"/>
+
+            <EditText
+                android:id="@+id/artistsNameEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/lato"
+                android:hint="Artist names..."
+                android:textColor="@color/md_green_400"
+                android:textColorHint="@color/md_grey_600"
+                android:background="@drawable/bg_button_borders"/>
+
+
+            <EditText
+                android:id="@+id/genreTagsEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/lato"
+                android:hint="Genre tags..."
+                android:textColor="@color/md_green_400"
+                android:textColorHint="@color/md_grey_600"
+                android:background="@drawable/bg_button_borders"/>
+
+
+            <RelativeLayout
+                android:id="@+id/uploadSongBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:background="@drawable/bg_button_borders_blue"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/uploadTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/lato_bold"
+                    android:paddingVertical="12dp"
+                    android:text="Select Song"
+                    android:textColor="@color/md_blue_300"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_toEndOf="@id/uploadTv"
+                    android:src="@drawable/ic_audio_file"
+                    app:tint="@color/md_blue_300" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/uploadedSongBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:background="@drawable/bg_button_borders_red"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/uploadedLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingVertical="8dp">
+
+                    <TextView
+                        android:id="@+id/uploadedTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Filename.mp3"
+                        android:maxLength="30"
+                        android:ellipsize="end"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/md_red_400"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/supporterTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/lato"
+                        android:text="Click here to remove song"
+                        android:textColor="@color/md_red_400"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_toEndOf="@id/uploadedLayout"
+                    android:src="@drawable/ic_round_delete"
+                    app:tint="@color/md_red_400"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/submitBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:layout_gravity="bottom"
+                android:textSize="16sp"
+                android:paddingVertical="8dp"
+                android:layout_marginTop="54dp"
+                android:backgroundTint="@color/md_green_400"
+                android:textColor="@color/black"
+                android:drawableEnd="@drawable/ic_arrow_right_long"
+                android:drawableTint="@color/black"/>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
